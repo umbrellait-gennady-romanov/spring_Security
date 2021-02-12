@@ -1,0 +1,27 @@
+server:
+  port: 8189
+#  servlet:
+#    context-path: /security
+spring:
+  jpa:
+    show-sql: true
+    open-in-view: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        temp:
+          use_jdbc_metadata_defaults: false
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    initialization-mode: always
+    driver-class_name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=springsecurity
+    username: postgres
+    password: postgres
+
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp
+      suffix: .jsp
